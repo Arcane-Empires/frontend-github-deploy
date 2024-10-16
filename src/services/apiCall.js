@@ -4,7 +4,7 @@ const apiCall = async (url) => {
         const response = await axios.get(url, {
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': 'https://frontend-github-deploy-staging-379840034411.us-central1.run.app/'
             }
         });
         return response.data;
