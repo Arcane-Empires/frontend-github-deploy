@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:14 AS build
+FROM node:18.15.0-alpine
 
 # Set the working directory
 WORKDIR /app
@@ -16,14 +16,8 @@ COPY . .
 # Build the React application
 RUN npm run build
 
-# Use the official Nginx image as the base image for serving the built application
-FROM nginx:alpine
-
-# Copy the built files from the previous stage to the Nginx HTML directory
-COPY --from=build /app/build /usr/share/nginx/html
-
 # Expose port 8080
-EXPOSE 8080
+EXPOSE 3000
 
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Serve the build
+CMD ["npx", "serve", "-s", "build"]
