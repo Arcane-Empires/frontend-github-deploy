@@ -4,7 +4,7 @@ import apiCall  from '../services/apiCall'
 const UI = () => {
   const fetchData = async () => {
     try {
-      const data = await apiCall('https://node-server-staging-379840034411.us-central1.run.app/api/user');
+      const data = await apiCall('https://node-server-379840034411.us-central1.run.app');
 
       console.log('Data:', data);
     } catch (error) {
