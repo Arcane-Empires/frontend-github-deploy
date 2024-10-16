@@ -5,6 +5,7 @@ const UI = () => {
   const fetchData = async () => {
     try {
       const data = await apiCall('https://node-server-379840034411.us-central1.run.app/api/user');
+
       console.log('Data:', data);
     } catch (error) {
       console.error('Error fetching data:', error);
